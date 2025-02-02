@@ -5,7 +5,7 @@ import fs from 'fs';
 import readline from 'readline';
 import process from 'process';
 
-const VERSION = "0.60.3-rc1";
+const VERSION = "0.60.4";
 const args = process.argv.slice(2);
 let codeBuffer = []; 
 function createNewJSFile(rl) {
