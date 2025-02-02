@@ -1,5 +1,5 @@
-// NOTE: Testing files only. Not a part of the source. 
 
+// NOTE: Testing files only. Not a part of the source. 
 import { VariableDeclaration, IfStatement, WhileStatement, BinaryExpression, Literal, Identifier } from '../src/appast';
 import BytecodeCompiler from '../src/appvm';
 import VirtualMachine from '../src/appvm';
