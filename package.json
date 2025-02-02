@@ -1,0 +1,27 @@
+{
+  "name": "applejs",
+  "version": "0.60.1",
+  "description": "A JavaScript/Browser engine built in JavaScript for fun",
+  "main": "js/appast.js",
+  "scripts": {
+    "start": "node js/appast.js",
+    "test": "echo \"No tests yet\" && exit 0",
+    "build": "echo \"Building Apple\" && exit 0"
+  },
+  "keywords": [
+    "javascript",
+    "engine",
+    "interpreter"
+  ],
+  "author": "Owen Gaydosz",
+  "license": "MPL-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owgydz/apple.git"
+  },
+  "bugs": {
+    "url": "https://github.com/owgydz/apple/issues"
+  },
+  "homepage": "https://github.com/owgydz/apple#readme",
+  "type": "module"
+}
