@@ -1,10 +1,10 @@
 {
   "name": "applejs",
-  "version": "0.60.1",
-  "description": "A JavaScript/Browser engine built in JavaScript for fun",
-  "main": "js/appast.js",
+  "version": "0.60.3-rc3",
+  "description": "A JavaScript/Browser engine",
+  "main": "js/apprepl.js",
   "scripts": {
-    "start": "node js/appast.js",
+    "start": "node js/apprepl.js",
     "test": "echo \"No tests yet\" && exit 0",
     "build": "echo \"Building Apple\" && exit 0"
   },
