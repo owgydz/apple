@@ -5,11 +5,11 @@ import fs from 'fs';
 import readline from 'readline';
 import process from 'process';
 
-const VERSION = "0.60.3";
+const VERSION = "0.60.3-rc1";
 const args = process.argv.slice(2);
 let codeBuffer = []; 
 function createNewJSFile(rl) {
-  rl.question("Enter the name of the new JS file (e.g., newfile.js): ", (fileName) => {
+  rl.question("Enter the name of the new JavaScript file (e.g., newfile.js): ", (fileName) => {
     if (!fileName.endsWith(".js")) {
       console.log("Error: The file must have a .js extension.");
       rl.close();
