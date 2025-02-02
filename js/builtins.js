@@ -1,6 +1,5 @@
 // Copyright 2025 the Apple authors.
 // This project is governed by the Mozilla Public License 2.0. View in the LICENSE file.
-// builtins.js
 
 export const builtins = {
   pow: (a, b) => Math.pow(a, b),
