@@ -4,7 +4,7 @@
 import fs from 'fs';
 import readline from 'readline';
 
-const VERSION = "0.60.1";  
+const VERSION = "0.60.2";  
 
 const args = process.argv.slice(2);
 if (args.includes("-v")) {
@@ -168,7 +168,7 @@ function startREPL() {
 // check for args n stuffs
 if (args.length > 0) {
   if (args.includes("-tx")) {
-    console.log("Entering text editor Mode. Type 'done' to finish editing.");
+    console.log("Entering text editor mode. Type 'done' to finish editing.");
     startREPL();
   } else if (args.includes("--create")) {
     console.log("apple: creating file...");
@@ -187,6 +187,6 @@ if (args.length > 0) {
     runFile(fileName);
   }
 } else {
-  console.log("No file provided. Running apple base.");
+  console.log("No file provided. Running apple in base.");
   startREPL();
 }
