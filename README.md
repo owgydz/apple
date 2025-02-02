@@ -4,7 +4,7 @@ Apple is a lightweight JavaScript engine built with the goal of being simple, ex
 
 ## Features
 
-- **REPL**: A command-line interface for interacting with the JavaScript engine.
+- **CLI interface**: A command-line interface for interacting with the JavaScript engine.
 - **File Execution**: You can run JavaScript files from the command line.
 - **File Creation**: Create and edit JavaScript files directly within the REPL.
 - **Garbage Collection**: Implements Mark and Sweep garbage collection.
