@@ -4,6 +4,7 @@
 import fs from 'fs';
 import readline from 'readline';
 import { spawnSync } from 'child_process';
+import { loadAppleModule } from './appmodload.js';
 const VERSION = "0.60.4";  
 
 const args = process.argv.slice(2);
@@ -35,6 +36,11 @@ function tokenize(code) {
     }
   }
   return tokens;
+}
+
+function importAppleModule(moduleName) {
+  const modulePath = `.apple/${moduleName}.apple`;
+  return loadAppleModule(modulePath);
 }
 
 // Parser function
