@@ -11,7 +11,7 @@ const args = process.argv.slice(2);
 
 if (args.includes("-v")) {
   console.log(`Current running Apple version: ${VERSION}`);
-  console.log(`Copyright 2025 the Apple authors, under the Mozilla Public License v2.0.`)
+  console.log(`Copyright 2025 the Apple authors, under the Mozilla Public License v2.0.`);
   process.exit(0);  
 }
 
@@ -168,8 +168,17 @@ function createNewFile() {
   });
 }
 
+function runBrowser() {
+  const browserProcess = spawnSync('node', ['browser/main.js'], { stdio: 'inherit' });
+  if (browserProcess.error) {
+    console.error("appleBrowser:", browserProcess.error);
+  }
+}
+
 // Check command-line flags
-if (args.includes("-tx")) {
+if (args.includes("-br")) {
+  runBrowser();
+} else if (args.includes("-tx")) {
   openNanoEditor();
 } else if (args.includes("-c")) {
   createNewFile();
