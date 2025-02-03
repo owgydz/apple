@@ -1,34 +1,35 @@
 // Copyright 2025 the Apple authors. 
 // This project is governed by the Mozilla Public License, v2.0. View in the LICENSE file. 
 
-export function parseHTML(htmlString) {
+export function parseHTML(html) {
+  const regex = /<([a-z]+)([^>]*?)>(.*?)<\/\1>|<([a-z]+)([^>]*?)(\/?)>/g;
   const elements = [];
-  let regex = /<([a-zA-Z0-9]+)([^>]*)>(.*?)<\/\1>/gs;
   let match;
 
-  while ((match = regex.exec(htmlString)) !== null) {
-    const tag = match[1];
-    const attributes = parseAttributes(match[2]);
-    const content = match[3];
+  while ((match = regex.exec(html)) !== null) {
+    const tagName = match[1] || match[4];
+    const attributes = parseAttributes(match[2] || match[5]);
+    const isSelfClosing = !!match[6];
+    const innerHTML = match[3] || '';
 
-    elements.push({
-      tag,
-      attributes,
-      content
-    });
+    const element = { tagName, attributes, children: [], innerHTML, isSelfClosing };
+
+    if (!isSelfClosing && innerHTML) {
+      element.children = parseHTML(innerHTML);
+    }
+
+    elements.push(element);
   }
 
   return elements;
 }
 
-function parseAttributes(attributesString) {
-  const attributes = {};
-  let regex = /([a-zA-Z\-]+)="([^"]*)"/g;
+function parseAttributes(attributeStr) {
+  const attrs = {};
+  const attrRegex = /([a-z\-]+)="([^"]*)"/g;
   let match;
-
-  while ((match = regex.exec(attributesString)) !== null) {
-    attributes[match[1]] = match[2];
+  while ((match = attrRegex.exec(attributeStr)) !== null) {
+    attrs[match[1]] = match[2];
   }
-
-  return attributes;
+  return attrs;
 }
