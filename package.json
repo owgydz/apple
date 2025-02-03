@@ -1,6 +1,6 @@
 {
   "name": "applejs",
-  "version": "0.60.3-rc3",
+  "version": "0.60.4",
   "description": "A JavaScript/Browser engine",
   "main": "js/apprepl.js",
   "scripts": {
