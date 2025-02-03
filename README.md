@@ -8,3 +8,5 @@ Apple is a lightweight JavaScript engine built with the goal of being simple, ex
 - **File Execution**: You can run JavaScript files from the command line.
 - **File Creation**: Create and edit JavaScript files directly within the REPL.
 - **Garbage Collection**: Implements Mark and Sweep garbage collection.
+
+## Browser (coming soon)
