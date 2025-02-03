@@ -1,3 +1,6 @@
+// Copyright 2025 the Apple authors.
+// This project is governed by the Mozilla Public License 2.0. View in the LICENSE file.
+
 export function renderDOM(domElements) {
   return domElements.map((element) => {
     let html = `<${element.tagName}`;
