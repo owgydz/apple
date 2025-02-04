@@ -5,6 +5,6 @@ export function setupBookmarks() {
   document.getElementById('bookmark').addEventListener('click', () => {
     const url = window.location.href;
     bookmarks.push(url);
-    console.log('Bookmarked:', url);
+    console.log('Bookmarked tab:', url);
   });
 }
