@@ -25,5 +25,6 @@ fi
 # Install htmlparser2 and other npm dependencies
 echo "Installing apple deps"
 npm install htmlparser2
+npm install 
 
 echo "All dependencies have been installed."
