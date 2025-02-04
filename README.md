@@ -1,6 +1,6 @@
 # Apple JavaScript Engine
 
-Apple is a lightweight JavaScript engine built with the goal of being simple, extensible, and fast. This project allows you to execute JavaScript code, run files, create files, and interact with a CLI environment. (Install the release tag for a stable version)
+Apple is a lightweight JavaScript engine built with the goal of being simple, extensible, and fast. This project allows you to execute JavaScript code, run files, create files, and interact with a CLI environment. (Install the release tag for a stable version. The current revision (last commit) is not stable at all and is in testing.)
 
 ## Features
 
