@@ -25,7 +25,6 @@ fi
 echo "Installing apple deps. Please wait."
 npm install htmlparser2
 npm install node-fetch
-npm install sdl2
 
 echo "All dependencies have been installed. Done."
 echo "Running adi (Apple Dependencies Installer) v0.10.9
