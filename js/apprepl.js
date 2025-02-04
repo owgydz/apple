@@ -143,6 +143,36 @@ function openNanoEditor() {
   }
 }
 
+// Function to handle HTML code in Nano editor
+function openNanoEditorForHTML() {
+  const tempFile = `/tmp/apple_edit_${Date.now()}.html`;
+  fs.writeFileSync(tempFile, "<!-- Write your HTML code here -->\n", "utf-8");
+
+  const nano = spawnSync("nano", [tempFile], { stdio: "inherit" });
+
+  if (nano.error) {
+    console.error("Error opening Nano editor.");
+    process.exit(1);
+  }
+
+  const editedHTML = fs.readFileSync(tempFile, "utf-8");
+  fs.unlinkSync(tempFile);
+
+  try {
+    const dom = parseHTML(editedHTML);
+    manipulateHTML(dom, (document) => {
+      // Example:
+      const newElement = document.createElement('p');
+      newElement.textContent = 'Hello, world!';
+      document.body.appendChild(newElement);
+    });
+    const resultHTML = renderHTML(dom);
+    console.log(resultHTML);
+  } catch (err) {
+    console.error("apple:", err.message);
+  }
+}
+
 function createNewFile() {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -180,6 +210,8 @@ if (args.includes("-br")) {
   runBrowser();
 } else if (args.includes("-tx")) {
   openNanoEditor();
+} else if (args.includes("-htm")) {
+  openNanoEditorForHTML();
 } else if (args.includes("-c")) {
   createNewFile();
 } else if (args.includes("-ru")) {
