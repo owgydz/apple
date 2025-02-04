@@ -12,17 +12,16 @@ if ! command_exists node; then
   curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
   sudo apt-get install -y nodejs
 else
-  echo "Node.js is already installed."
+  echo "Node.js is already installed. Skipping step."
 fi
 
 if ! command_exists npm; then
   echo "Installing npm..."
   sudo apt-get install -y npm
 else
-  echo "npm is installed."
+  echo "npm is installed. Skipping step."
 fi
 
-# Install htmlparser2 and other npm dependencies
 echo "Installing apple deps"
 npm install htmlparser2
 npm install node-fetch
