@@ -1,6 +1,6 @@
 # Copyright 2025 the Apple authors.
 # This project is governed under the Mozilla Public License, v2.0. View in the LICENSE file. 
-
+# To make this script executable, run `chmod +x apple/sh/adi.sh"`.
 #!/bin/bash
 
 command_exists() {
@@ -22,10 +22,10 @@ else
   echo "npm is installed. Skipping step."
 fi
 
-echo "Installing apple deps"
+echo "Installing apple deps. Please wait."
 npm install htmlparser2
 npm install node-fetch
 npm install sdl2
 
-echo "All dependencies have been installed."
-echo "Running adi (Apple Deps Installer) v0.10.9
+echo "All dependencies have been installed. Done."
+echo "Running adi (Apple Dependencies Installer) v0.10.9
