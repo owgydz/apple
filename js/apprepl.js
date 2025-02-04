@@ -4,7 +4,7 @@
 import fs from 'fs';
 import readline from 'readline';
 import { spawnSync } from 'child_process';
-import { loadAppleModule } from './appmodload.js';
+import { parseHTML, renderHTML, manipulateHTML } from '../html/src/html.js';
 const VERSION = "0.60.4";  
 
 const args = process.argv.slice(2);
