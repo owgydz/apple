@@ -38,10 +38,6 @@ function tokenize(code) {
   return tokens;
 }
 
-function importAppleModule(moduleName) {
-  const modulePath = `.apple/${moduleName}.apple`;
-  return loadAppleModule(modulePath);
-}
 
 // Parser function
 function parseProgram(tokens) {
@@ -114,7 +110,7 @@ function startREPL() {
 
     rl.prompt();
   }).on('close', () => {
-    console.log('Exiting Apple.");
+    console.log("Exiting Apple.");
     process.exit(0);
   });
 }
@@ -143,7 +139,6 @@ function openNanoEditor() {
   }
 }
 
-// Function to handle HTML code in Nano editor
 function openNanoEditorForHTML() {
   const tempFile = `/tmp/apple_edit_${Date.now()}.html`;
   fs.writeFileSync(tempFile, "<!-- Write your HTML code here -->\n", "utf-8");
@@ -199,14 +194,13 @@ function createNewFile() {
 }
 
 function runBrowser() {
-  const browserProcess = spawnSync('node', ['browser/main.js'], { stdio: 'inherit' });
+  const browserProcess = spawnSync('node', ['browser/src/main.ts'], { stdio: 'inherit' });
   if (browserProcess.error) {
     console.error("appleBrowser:", browserProcess.error);
   }
 }
 
-// Check command-line flags
-if (args.includes("-br")) {
+if (args.includes("-b")) {
   runBrowser();
 } else if (args.includes("-tx")) {
   openNanoEditor();

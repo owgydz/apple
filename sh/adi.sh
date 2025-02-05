@@ -19,12 +19,27 @@ if ! command_exists npm; then
   echo "PROCESS: Installing npm..."
   sudo apt-get install -y npm
 else
-  echo "INFO: Since npm is already installed, skipping step"
+  echo "INFO: Since NPM is already installed, skipping step"
+fi
+
+if ! command_exists cargo; then
+  echo "PROCESS: Installing cargo wasm"
+  cargo install wasm-pack
+else
+  echo "INFO: Since WASM is already installed, skipping step"
+fi
+
+if ! command_exists npm; then
+  echo "PROCESS: Installing Jest"
+  npm i --save-dev @types/jest 
+else
+  echo "INFO: Since Jest is already installed, skipping step"
 fi
 
 echo "Installing apple deps. Please wait."
 npm install htmlparser2
 npm install node-fetch
+cargo install wasm-pack
 
 echo "All dependencies have been installed. Done."
-echo "Running adi (Apple Dependencies Installer) v0.11.9
+echo "Running adi (Apple Dependencies Installer) v0.11.0

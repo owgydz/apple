@@ -1,2 +1,3 @@
-Apple Browser v0.1.9982.23 is expected to release with v0.81.2.
-This code is expected to be buggy and not work until the v0.81.2 rollout.
+The Apple Browser, v0.1.9982.23. Made in TypeScript. 
+Mainly a side project. Localization into the apple/ repository wasn't intended, just figured we'd do it.
+Run it in the shell with -b.
