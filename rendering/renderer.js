@@ -10,7 +10,7 @@ let Module = {
     // Initialize WebGL context
     const gl = canvas.getContext('webgl2');
     if (!gl) {
-      alert("WebGL 2 not supported.");
+      alert("ERR! WebGL 2 not supported");
       return;
     }
     
