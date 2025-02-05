@@ -5,6 +5,8 @@ import fs from 'fs';
 import readline from 'readline';
 import { spawnSync } from 'child_process';
 import { parseHTML, renderHTML, manipulateHTML } from '../html/src/html.js';
+import { openCSSEditor } from '../css/src/csseditor.js';
+
 const VERSION = "0.60.4";  
 
 const args = process.argv.slice(2);
@@ -206,6 +208,8 @@ if (args.includes("-b")) {
   openNanoEditor();
 } else if (args.includes("-htm")) {
   openNanoEditorForHTML();
+} else if (args.includes("-css")) {
+  openCSSEditor();
 } else if (args.includes("-c")) {
   createNewFile();
 } else if (args.includes("-ru")) {
