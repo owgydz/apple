@@ -8,18 +8,18 @@ command_exists() {
 }
 
 if ! command_exists node; then
-  echo "Installing Node.js..."
+  echo "PROCESS: Installing Node.js..."
   curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
   sudo apt-get install -y nodejs
 else
-  echo "Node.js is already installed. Skipping step."
+  echo "INFO: Since Node.js is already installed, skipping step"
 fi
 
 if ! command_exists npm; then
-  echo "Installing npm..."
+  echo "PROCESS: Installing npm..."
   sudo apt-get install -y npm
 else
-  echo "npm is installed. Skipping step."
+  echo "INFO: Since npm is already installed, skipping step"
 fi
 
 echo "Installing apple deps. Please wait."
@@ -27,4 +27,4 @@ npm install htmlparser2
 npm install node-fetch
 
 echo "All dependencies have been installed. Done."
-echo "Running adi (Apple Dependencies Installer) v0.10.9
+echo "Running adi (Apple Dependencies Installer) v0.11.9
