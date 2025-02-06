@@ -2,6 +2,7 @@
 /* This project is governed under the Mozilla Public License, v2.0. View in the LICENSE file. */
 /* Visit w3schools.org for more info on CSS: https://www.w3schools.com/css/ */
 /* Make sure you have an HTML file in your project that can "tie" into this file. */
+
 p.dotted {border-style: dotted;}
 p.dashed {border-style: dashed;}
 p.solid {border-style: solid;}
