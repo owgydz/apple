@@ -12,7 +12,7 @@ const VERSION = "0.60.4";
 const args = process.argv.slice(2);
 
 if (args.includes("-v")) {
-  console.log(`Current running Apple version: ${VERSION}`);
+  console.log(`Currently running Apple version: ${VERSION}`);
   console.log(`Copyright 2025 the Apple authors, under the Mozilla Public License v2.0.`);
   process.exit(0);  
 }
