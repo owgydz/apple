@@ -170,6 +170,30 @@ function openNanoEditorForHTML() {
   }
 }
 
+function openCSSEditor() {
+  const tempFile = `/tmp/apple_edit_${Date.now()}.css`;
+  fs.writeFileSync(tempFile, "/* Write your CSS here */\n", "utf-8");
+
+  const nano = spawnSync("nano", [tempFile], { stdio: "inherit" });
+
+  if (nano.error) {
+    console.error("Error opening Nano.");
+    process.exit(1);
+  }
+
+  const editedCode = fs.readFileSync(tempFile, "utf-8");
+  fs.unlinkSync(tempFile);
+
+  try {
+    const cssFilePath = path.join(__dirname, 'styles.css');
+    fs.writeFileSync(cssFilePath, editedCode, "utf-8");
+    console.log("CSS updated successfully");
+  } catch (err) {
+    console.error("apple:", err.message);
+  }
+}
+
+
 function createNewFile() {
   const rl = readline.createInterface({
     input: process.stdin,

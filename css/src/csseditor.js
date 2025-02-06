@@ -23,7 +23,7 @@ function openCSSEditor() {
   try {
     const cssFilePath = path.join(__dirname, 'styles.css');
     fs.writeFileSync(cssFilePath, editedCode, "utf-8");
-    console.log("CSS updated successfully!");
+    console.log("CSS updated successfully");
   } catch (err) {
     console.error("apple:", err.message);
   }
