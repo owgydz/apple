@@ -3,7 +3,7 @@
 
 import fetch from 'node-fetch';
 import { parseDOM } from 'htmlparser2';
-import { VirtualDOM } from './virtualDOM';  
+import { VirtualDOM } from './virtualDOM.js';  
 
 export async function fetchGoogleHomepage() {
   try {

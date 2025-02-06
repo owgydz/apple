@@ -1,0 +1,10 @@
+/* Copyright 2025 the Apple authors. */
+/* This project is governed under the Mozilla Public License, v2.0. View in the LICENSE file. */
+/* Visit w3schools.org for more info on CSS: https://www.w3schools.com/css/ */
+/* This is the script located at: https://www.w3schools.com/css/css_syntax.asp */
+/* Make sure you have an HTML file in your project. */
+
+p {
+  color: red;
+  text-align: center;
+}
