@@ -31,14 +31,21 @@ fi
 
 if ! command_exists npm; then
   echo "PROCESS: Installing Jest"
-  npm i --save-dev @types/jest 
+  npm -g i --save-dev @types/jest 
 else
   echo "INFO: Since Jest is already installed, skipping step"
 fi
 
-echo "Installing apple deps. Please wait."
-npm install htmlparser2
-npm install node-fetch
+if ! command_exists npm; then
+   echo "PROCESS: Installing ts-node:"
+   npm install -g ts-node
+else
+  echo "INFO: Since ts-node is already installed, skipping step"
+fi
+
+echo "Finalizing apple deps. Please wait."
+npm -g install htmlparser2
+npm -g install node-fetch
 cargo install wasm-pack
 
 echo "All dependencies have been installed. Done."
