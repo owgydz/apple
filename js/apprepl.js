@@ -84,7 +84,6 @@ function parseBlock(tokens) {
   return block;
 }
 
-// Start REPL
 function startREPL() {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -92,17 +91,12 @@ function startREPL() {
     prompt: '> '
   });
 
-  console.log("Apple has started. Press Ctrl+D to exit.");
+  console.log("Starting Apple. Press Ctrl + D to exit.");
   rl.prompt();
-
-  let codeBuffer = [];
 
   rl.on('line', (line) => {
     try {
-      const tokens = tokenize(line);
-      const ast = parseProgram(tokens);
-      const executor = new ASTExecutor(ast);
-      const result = executor.execute();
+      const result = eval(line);
       if (result !== undefined) {
         console.log(result);
       }
