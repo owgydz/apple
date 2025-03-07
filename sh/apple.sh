@@ -8,10 +8,13 @@
 #!/bin/bash
 APPLE_DIR="$HOME/apple"
 
-# check as a fallback
+# Linux only*
+# Check as a fall back incase if the user added the file into their /root directory. 
+# If so, run from there.
 if [ ! -d "$APPLE_DIR" ]; then
     APPLE_DIR="/root/apple"
 fi
 
-# run the thing
+# Now check if it's located in the git clone directory.
+# If so, run the node command in the correct directory.
 node "$APPLE_DIR/js/apprepl.js" "$@"
